@@ -1,0 +1,36 @@
+<%- include('layouts/header_pub') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card-shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-light">Edit Pub</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/login/admin/addPub/edit/<%= pub._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control form-control-lg" placeholder="Enter title" value="<%= pub.title %>" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input  class="form-control form-control-lg" type="file" name="image" />
+                            <img src="/<%= pub.image %>" width="100" class="img-thumbnail mt-1"  />
+                        </div>
+                        <div class="mb-3">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" class="form-control form-control-lg" placeholder="Enter description" value="<%= pub.description %>" required />
+                        </div>
+                        <input type="hidden" name="old_image" value="<%= pub.image %>">
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" class="btn btn-success btn-lg" value="Update Pub" required />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>

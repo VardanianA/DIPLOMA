@@ -1,0 +1,36 @@
+
+
+<%- include('layouts/header_cinema') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card-shadow">
+                <div class="card-header bg-primary">
+                    <h3 class="text-light">Add New Cinema</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/login/admin/addCinema/add" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control form-control-lg" placeholder="Enter title" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" class="form-control form-control-lg"  required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" class="form-control form-control-lg" placeholder="Enter description" required />
+                        </div>
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" class="btn btn-primary btn-lg" value="Add Cinema" required />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>
